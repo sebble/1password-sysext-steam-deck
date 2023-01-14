@@ -12,18 +12,22 @@ TODO
 
 modified from `1password-cli.install` in https://aur.archlinux.org/packages/1password-cli
 
+```shell
     getent group onepassword-cli || sudo groupadd onepassword-cli
     sudo chgrp onepassword-cli 1password/usr/bin/op
     chmod g+s 1password/usr/bin/op
+```
 
 ## Configure and enable systemd-sysext
 
+```shell
     mkdir -p ~/extensions
     sudo ln -s "${HOME}/extensions" /var/lib/extensions
     mv 1password.raw ~/extensions/1password.raw
     sudo systemctl enable systemd-sysext
     sudo systemctl start systemd-sysext
     systemd-sysext status
+```
 
 ## Debugging:
 

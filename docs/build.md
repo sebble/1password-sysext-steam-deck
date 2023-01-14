@@ -6,10 +6,13 @@ Try `make build` or `make`.
 
 We provide a name for the `sysext` that we are going to build.
 
+```shell
     SYSEXT_PREFIX=1password
+```
 
 modified from `/opt/1Password/after-install.sh` in official desktop download archive
 
+```shell
     installFiles() {
       CWD=$(pwd)
       cd ${SYSEXT_PREFIX}/opt/1Password/
@@ -59,10 +62,13 @@ modified from `/opt/1Password/after-install.sh` in official desktop download arc
 
     installFiles
 #installAutoupdateChannel ## Not implemented
+```
 
 ## Add application (enables browser integration and launcher menu item)
 
+```shell
     cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREFIX}/usr/share/applications/
+```
 
 ## Configure 1Password CLI
 
@@ -73,8 +79,14 @@ TODO
 
 ## Configure systemd-sysext
 
+```shell
     VERSION_ID="$(grep -E '^VERSION_ID=' /etc/os-release | cut -d= -f2)"
     echo "ID=steamos" > ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
     echo "VERSION_ID=${VERSION_ID}" >> ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
+```
 
+## Create the filesystem layer
+
+```shell
     mksquashfs ${SYSEXT_PREFIX} ${SYSEXT_PREFIX}.raw
+```

@@ -13,7 +13,7 @@ This little script:
 3.  Renames the `.md.sh` files back to `.sh`
 4.  Moves the `.md` files in `scripts/` to `docs/`
 
-<!-- Does this fix the codeblock? -->
+<!-- BUG: force break after list -->
 
     rename .sh .md scripts/*.sh
     sed -E -i.sh '/^#!/d; s/^([^#])/    \1/; s/^# //' scripts/*
@@ -22,13 +22,13 @@ This little script:
 
 Old (and simpler) version:
 
-   cd scripts
-   for script in *.sh; do
-       sed -E '/^#!/d; s/^([^#])/    \1/; s/^# //' "${script}" > "../docs/$(echo $script | cut -d. -f1).md"
-   done
+    cd scripts
+    for script in *.sh; do
+        sed -E '/^#!/d; s/^([^#])/    \1/; s/^# //' "${script}" > "../docs/$(echo $script | cut -d. -f1).md"
+    done
 
 And here is a concept of another potential '[literate](https://en.wikipedia.org/wiki/Literate_programming)' format.
-Although this script is kind of the opposite.
+Although this whole script is kind of the opposite.
 
     : << DOC
     This is a multi-line string that doesn't need to be prefixed by '#'.
