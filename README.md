@@ -5,10 +5,11 @@ A systemd system extension allows you to install software without modifying the 
 
 ### Instructions
 
-#### Building
+#### Quick start
 
 ```shell
 make
+make install
 ```
 
 #### Setting up SSH Agent
@@ -102,3 +103,4 @@ Use a system Terminal session.
 
 -   [Steam Deck system extension](https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-steam-deck-with-systemd-sysext/)
 -   [CLI connection to Desktop app](https://1password.community/discussion/128029/can-not-connect-to-desktop-app)
+-   [Reddit Discussion](https://www.reddit.com/r/1Password/comments/vz5pqb/possible_to_install_on_steam_deck/)
