@@ -3,13 +3,6 @@
 # title: Install 
 # ---
 
-: << DOC
-Hello world.
-
-
-
-DOC
-
 ## Configure 1Password desktop
 
 # TODO

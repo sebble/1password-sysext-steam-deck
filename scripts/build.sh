@@ -57,14 +57,18 @@ installFiles
 #installAutoupdateChannel ## Not implemented
 
 ## Add application (enables browser integration and launcher menu item)
+
 cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREFIX}/usr/share/applications/
 
 ## Configure 1Password CLI
+
 # TODO
-# gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
-# gpg --verify op.sig op
+
+#    gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+#    gpg --verify op.sig op
 
 ## Configure systemd-sysext
+
 VERSION_ID="$(grep -E '^VERSION_ID=' /etc/os-release | cut -d= -f2)"
 echo "ID=steamos" > ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
 echo "VERSION_ID=${VERSION_ID}" >> ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
