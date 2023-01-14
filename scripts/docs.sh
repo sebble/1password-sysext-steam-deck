@@ -9,15 +9,15 @@
 # 1.  Renames the `.sh` files to `.md` in `scripts/`
 # 2.  Converts the files (and creates a 'backup' called `.md.sh`)
 #     -   Deletes the shebang
-#     -   Indents all non-commented, non-empty lines
+#     -   <s>Indents all non-commented, non-empty lines</s>
 #     -   Strips "`# `" from the start of every line
 # 3.  Renames the `.md.sh` files back to `.sh`
 # 4.  Moves the `.md` files in `scripts/` to `docs/`
 
-# <!-- BUG: force break after list -->
+# ^
 
 rename .sh .md scripts/*.sh
-sed -E -i.sh '/^#!/d; s/^([^#])/    \1/; s/^# //' scripts/*
+sed -E -i.sh '/^#!/d; s/^# //' scripts/*
 rename .md.sh .sh scripts/*.sh
 mv scripts/*.md docs/
 
