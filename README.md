@@ -90,6 +90,7 @@ I don't know. I assume not, but when reading abotu Visual Studio Code Flatpak is
 -   Verify more functionality
 -   Better dev notes
 -   Make a blog post?
+-   Work out commit signing
 
 ### References
 
