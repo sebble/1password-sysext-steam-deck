@@ -2,6 +2,7 @@
 # ---
 # title: Download
 # ---
+set -ex
 
 # Try `make download` or `make`.
 

@@ -2,6 +2,7 @@
 # ---
 # title: Install 
 # ---
+set -ex
 
 # Try `make install`.
 
@@ -22,8 +23,6 @@
 
 # ```shell
 getent group onepassword-cli || sudo groupadd onepassword-cli
-sudo chgrp onepassword-cli 1password/usr/bin/op
-chmod g+s 1password/usr/bin/op
 # ```
 
 ## Configure and enable systemd-sysext
@@ -34,10 +33,11 @@ chmod g+s 1password/usr/bin/op
 
 # ```shell
 mkdir -p ~/extensions
-sudo ln -s "${HOME}/extensions" /var/lib/extensions
+sudo ln -sf "${HOME}/extensions" /var/lib/extensions
 mv 1password.raw ~/extensions/1password.raw
 sudo systemctl enable systemd-sysext
 sudo systemctl start systemd-sysext
+sudo systemd-sysext refresh
 systemd-sysext status
 # ```
 
