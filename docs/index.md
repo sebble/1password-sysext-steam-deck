@@ -44,13 +44,13 @@ export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 **Why not use the official Arch installation instructions?**
 
-See https://support.1password.com/install-linux/#arch-linux.
+See <https://support.1password.com/install-linux/#arch-linux>.
 
 This will fail at `makepkg`, installing the missing dependency will then fail at `fakeroot`.
 
 **Why not use the official Flatpak?**
 
-See https://support.1password.com/install-linux/#flatpak.
+See <https://support.1password.com/install-linux/#flatpak>.
 
 -   You’ll need to lock and unlock 1Password in your browser separately from the app.
 -   You won’t be able to unlock 1Password or 1Password CLI with system authentication.
@@ -58,7 +58,7 @@ See https://support.1password.com/install-linux/#flatpak.
 
 **Why not follow the instructions for other distributions?**
 
-See https://support.1password.com/install-linux/#other-distributions-or-arm-targz.
+See <https://support.1password.com/install-linux/#other-distributions-or-arm-targz>.
 
 The installation script `sudo /opt/1Password/after-install.sh` will fail when trying to update _Polkit_ as the `/usr` partition is read-only (even as sudo).
 
@@ -66,7 +66,7 @@ You could use `sudo steamos-readonly disable` but I have chosen not to. See the 
 
 **Why not enable Steam Deck developer mode and/or make the `/usr` partition writable?**
 
-See https://help.steampowered.com/en/faqs/view/671A-4453-E8D2-323C.
+See <https://help.steampowered.com/en/faqs/view/671A-4453-E8D2-323C>.
 
 I don't want to. System updates will probably revert any changes you have made in here.
 
@@ -74,7 +74,7 @@ I don't want to. System updates will probably revert any changes you have made i
 
 Firstly, I made this with very little initial knowledge of `systemd-sysext`, _Arch_, and a few other things. This is for personal use.
 
-Secondly, see https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-steam-deck-with-systemd-sysext/ (section "Limitations and caveats") for some very good reasons to be wary of using `systemd-sysext`.
+Secondly, see <https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-steam-deck-with-systemd-sysext/> (section "Limitations and caveats") for some very good reasons to be wary of using `systemd-sysext`.
 
 <details>
 <summary>Copy of the above blog in case it is not available. [2023-01-14]</summary>
