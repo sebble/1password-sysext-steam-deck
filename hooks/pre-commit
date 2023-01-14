@@ -2,3 +2,4 @@
 # ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
 
 ./scripts/docs.sh
+git add docs/
