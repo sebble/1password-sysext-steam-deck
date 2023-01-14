@@ -30,6 +30,8 @@ make
 make install
 ```
 
+Or read through the source-code which has been written with in-line documentation. On [GitHub](https://github.com/sebble/1password-sysext-steam-deck). On [Pages](https://sebble.github.io/1password-sysext-steam-deck/download)
+
 **Setting up SSH Agent**
 
 Add the following to your `~/.bashrc` if you want all SSH Agent connections to use 1Password.
@@ -105,7 +107,7 @@ Use a system Terminal session.
 
 **Where is the documentation?**
 
-I have added comments inline with the main scripts, these are converted to markdown (as long as I remembered to type `make docs` before committing). See [docs/build].
+I have added comments inline with the main scripts, these are converted to markdown (as long as I remembered to type `make docs` before committing). See <docs/build>.
 
 ### To-do
 

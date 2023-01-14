@@ -39,3 +39,5 @@ mv op 1password/usr/bin/
 ```shell
 git clone https://aur.archlinux.org/1password-cli.git
 ```
+
+Next: <build>

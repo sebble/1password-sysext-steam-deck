@@ -91,3 +91,5 @@ echo "VERSION_ID=${VERSION_ID}" >> ${SYSEXT_PREFIX}/usr/lib/extension-release.d/
 # ```shell
 mksquashfs ${SYSEXT_PREFIX} ${SYSEXT_PREFIX}.raw
 # ```
+
+# Next: <install>
