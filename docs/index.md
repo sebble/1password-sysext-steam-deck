@@ -13,6 +13,7 @@ A systemd system extension allows you to install software without modifying the 
 -   System tray with _Quick Access_ popup
 -   1Password links from Firefox open in desktop GUI, including registering accounts
 -   SSH Agent can be used from Terminal, including commit signing
+-   System authentication prompt
 
 **Not working**
 
