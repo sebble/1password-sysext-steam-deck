@@ -2,7 +2,9 @@
 # ---
 # title: Download
 # ---
+# <!-- hide the `ex` bits, they're only useful in this script
 set -ex
+# -->
 
 # Try `make download` or `make`.
 

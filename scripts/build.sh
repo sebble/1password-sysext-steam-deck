@@ -2,7 +2,9 @@
 # ---
 # title: Build
 # ---
+# <!-- hide the `ex` bits, they're only useful in this script
 set -ex
+# -->
 
 # Try `make build` or `make`.
 
