@@ -1,4 +1,5 @@
 .PHONY: all download build install docs
+
 all: download build
 
 download:
@@ -12,3 +13,6 @@ install:
 
 docs:
 	./scripts/docs.sh
+
+hooks: .git/hooks/pre-commit
+	ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
