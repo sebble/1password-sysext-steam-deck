@@ -16,10 +16,10 @@
 
 # ^
 
-rename .sh .md scripts/*.sh
-sed -E -i.sh '/^#!/d; s/^# //' scripts/*
-rename .md.sh .sh scripts/*.sh
-mv scripts/*.md docs/
+    rename .sh .md scripts/*.sh
+    sed -E -i.sh '/^#!/d; s/^# //' scripts/*
+    rename .md.sh .sh scripts/*.sh
+    mv scripts/*.md docs/
 
 # Old (and simpler) version:
 # 
