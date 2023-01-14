@@ -53,6 +53,7 @@ header_pages:
   - build.md
   - install.md
   - docs.md
+  - source.md
 
 # Set to `true` to show excerpts on the homepage.
 #
