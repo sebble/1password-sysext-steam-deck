@@ -75,8 +75,8 @@ cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREFIX}/u
 
 # TODO
 
-#    gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
-#    gpg --verify op.sig op
+#     gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+#     gpg --verify op.sig op
 
 ## Configure systemd-sysext
 

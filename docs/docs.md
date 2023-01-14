@@ -15,23 +15,27 @@ This little script:
 
 ^
 
-    rename .sh .md scripts/*.sh
-    sed -E -i.sh '/^#!/d; s/^# //' scripts/*
-    rename .md.sh .sh scripts/*.sh
-    mv scripts/*.md docs/
+```shell
+rename .sh .md scripts/*.sh
+sed -E -i.sh '/^#!/d; s/^# //' scripts/*
+rename .md.sh .sh scripts/*.sh
+mv scripts/*.md docs/
+```
 
 Old (and simpler) version:
 
-    cd scripts
-    for script in *.sh; do
-        sed -E '/^#!/d; s/^([^#])/    \1/; s/^# //' "${script}" > "../docs/$(echo $script | cut -d. -f1).md"
-    done
+```shell
+cd scripts
+for script in *.sh; do
+    sed -E '/^#!/d; s/^([^#])/    \1/; s/^# //' "${script}" > "../docs/$(echo $script | cut -d. -f1).md"
+done
+```
 
 And here is a concept of another potential '[literate](https://en.wikipedia.org/wiki/Literate_programming)' format.
 Although this whole script is kind of the opposite.
 
-: << DOC
-This is a multi-line string that doesn't need to be prefixed by '#'.
-Unfortunately backticks would be interpreted, which could be dangerous.
-We'd also need some state in the conversion script above.
-DOC
+    : << DOC
+    This is a multi-line string that doesn't need to be prefixed by '#'.
+    Unfortunately backticks would be interpreted, which could be dangerous.
+    We'd also need some state in the conversion script above.
+    DOC
