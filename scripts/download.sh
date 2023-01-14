@@ -14,3 +14,6 @@ wget "https://cache.agilebits.com/dist/1P/op2/pkg/v${VERSION}/op_linux_${ARCH}_v
 unzip -d op op.zip
 mkdir -p 1password/usr/bin
 mv op 1password/usr/bin/
+
+## Download 1Password CLI scripts
+git clone https://aur.archlinux.org/1password-cli.git
