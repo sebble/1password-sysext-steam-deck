@@ -20,14 +20,14 @@ A systemd system extension allows you to install software without modifying the 
 
 ### Instructions
 
-#### Quick start
+**Quick start**
 
 ```shell
 make
 make install
 ```
 
-#### Setting up SSH Agent
+**Setting up SSH Agent**
 
 Add the following to your `~/.bashrc` if you want all SSH Agent connections to use 1Password.
 
@@ -35,16 +35,15 @@ Add the following to your `~/.bashrc` if you want all SSH Agent connections to u
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 ```
 
-
 ### F.A.Q.
 
-#### Why not use the official Arch installation instructions?
+**Why not use the official Arch installation instructions?**
 
 See https://support.1password.com/install-linux/#arch-linux.
 
 This will fail at `makepkg`, installing the missing dependency will then fail at `fakeroot`.
 
-#### Why not use the official Flatpak?
+**Why not use the official Flatpak?**
 
 See https://support.1password.com/install-linux/#flatpak.
 
@@ -52,7 +51,7 @@ See https://support.1password.com/install-linux/#flatpak.
 -   You won’t be able to unlock 1Password or 1Password CLI with system authentication.
 -   You won’t be able to use the SSH agent.
 
-#### Why not follow the instructions for other distributions?
+**Why not follow the instructions for other distributions?**
 
 See https://support.1password.com/install-linux/#other-distributions-or-arm-targz.
 
@@ -60,13 +59,13 @@ The installation script `sudo /opt/1Password/after-install.sh` will fail when tr
 
 You could use `sudo steamos-readonly disable` but I have chosen not to. See the next question.
 
-#### Why not enable Steam Deck developer mode and/or make the `/usr` partition writable?
+**Why not enable Steam Deck developer mode and/or make the `/usr` partition writable?**
 
 See https://help.steampowered.com/en/faqs/view/671A-4453-E8D2-323C.
 
 I don't want to. System updates will probably revert any changes you have made in here.
 
-#### What are the downsides of this approach?
+**What are the downsides of this approach?**
 
 Firstly, I made this with very little initial knowledge of `systemd-sysext`, _Arch_, and a few other things. This is for personal use.
 
@@ -91,11 +90,11 @@ Secondly, see https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-s
 
 </details>
 
-#### Could this be achieved with more permissive Flatpak policies?
+**Could this be achieved with more permissive Flatpak policies?**
 
 I don't know. I assume not, but when reading abotu Visual Studio Code Flatpak issues perhaps there are other approaches..? Please share if you have ideas. P.S. I do not know Flatpak either so I would not be able to implement this.
 
-#### My `os-release` is `22.08`
+**My `os-release` is `22.08`**
 
 If you run the build script within a VS Code Flatpak you will not get the correct values for `os-release` and other system properties.
 
