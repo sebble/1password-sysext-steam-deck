@@ -14,8 +14,9 @@ A systemd system extension allows you to install software without modifying the 
 -   Desktop GUI application appears, but without an icon
 -   System tray with _Quick Access_ popup
 -   1Password links from Firefox open in desktop GUI, including registering accounts
--   SSH Agent can be used from Terminal, including commit signing
--   System authentication prompt
+-   **SSH Agent can be used from Terminal, including commit signing**
+-   **System authentication prompt**
+-   **1Password CLI works now!**
 
 **Not working**
 
