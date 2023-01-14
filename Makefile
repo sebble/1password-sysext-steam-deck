@@ -1,3 +1,4 @@
+.PHONY: all download build install docs
 all: download build
 
 download:
@@ -8,3 +9,6 @@ build:
 
 install:
 	./scripts/install.sh
+
+docs:
+	./scripts/docs.sh

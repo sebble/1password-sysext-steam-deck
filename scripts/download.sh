@@ -1,8 +1,16 @@
 #!/bin/sh
+# ---
+# title: Download sources for stuff 
+# ---
 
 ## Download 1Password desktop
+# Start by downloading the offical 1Password release archive. We will install this into our sysext.
 curl -sSO https://downloads.1password.com/linux/tar/stable/x86_64/1password-latest.tar.gz
 tar -xf 1password-latest.tar.gz
+
+# TODO: verify the GPG signature of this download.
+
+# Next we will copy the contents into a the location they would normally be extracted to, but inside our `sysext` file system.
 mkdir -p 1password/opt
 mv 1password-* 1password/opt/1Password
 rm 1password-latest.tar.gz
