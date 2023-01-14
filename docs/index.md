@@ -3,6 +3,21 @@
 This repository contains instructions to build a system extension for use on a Steam Deck.
 A systemd system extension allows you to install software without modifying the read-only file system on `/usr`.
 
+### Status
+
+> **Notice:** This is a work in progress.
+
+**Working**
+
+-   Desktop GUI application appears, but without an icon
+-   System tray with _Quick Access_ popup
+-   1Password links from Firefox open in desktop GUI, including registering accounts
+-   SSH Agent can be used from Terminal, including commit signing
+
+**Not working**
+
+-   See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues)
+
 ### Instructions
 
 #### Quick start
