@@ -3,6 +3,8 @@
 # title: Build
 # ---
 
+# Try `make build` or `make`.
+
 # We provide a name for the `sysext` that we are going to build.
 
 SYSEXT_PREFIX=1password

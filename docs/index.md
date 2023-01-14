@@ -103,6 +103,10 @@ If you run the build script within a VS Code Flatpak you will not get the correc
 
 Use a system Terminal session.
 
+**Where is the documentation?**
+
+I have added comments inline with the main scripts, these are converted to markdown (as long as I remembered to type `make docs` before committing). See [docs/build].
+
 ### To-do
 
 -   Verify signatures of downloaded files
