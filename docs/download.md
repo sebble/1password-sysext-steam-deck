@@ -40,4 +40,4 @@ mv op 1password/usr/bin/
 git clone https://aur.archlinux.org/1password-cli.git
 ```
 
-Next: <build.html>
+Next: </1password-sysext-steam-deck/build>
