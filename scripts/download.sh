@@ -1,6 +1,6 @@
 #!/bin/sh
 # ---
-# title: Download sources for stuff 
+# title: Download sources
 # ---
 
 ## Download 1Password desktop
