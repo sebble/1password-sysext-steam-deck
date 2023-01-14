@@ -1,8 +1,11 @@
 #!/bin/sh
 
+# We provide a name for the `sysext` that we are going to build.
+
 SYSEXT_PREFIX=1password
 
-# modified from `/opt/1Password/after-install.sh` in official dekstop download
+# modified from `/opt/1Password/after-install.sh` in official desktop download archive
+
 installFiles() {
   CWD=$(pwd)
   cd ${SYSEXT_PREFIX}/opt/1Password/
