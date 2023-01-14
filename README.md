@@ -79,6 +79,12 @@ Secondly, see https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-s
 
 I don't know. I assume not, but when reading abotu Visual Studio Code Flatpak issues perhaps there are other approaches..? Please share if you have ideas. P.S. I do not know Flatpak either so I would not be able to implement this.
 
+#### My `os-release` is `22.08`
+
+If you run the build script within a VS Code Flatpak you will not get the correct values for `os-release` and other system properties.
+
+Use a system Terminal session.
+
 ### To-do
 
 -   Verify signatures of downloaded files

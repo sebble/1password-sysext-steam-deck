@@ -61,4 +61,9 @@ cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREFIX}/u
 # gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
 # gpg --verify op.sig op
 
-mksquashfs 1password 1password.raw
+## Configure systemd-sysext
+VERSION_ID="$(grep -E '^VERSION_ID=' /etc/os-release | cut -d= -f2)"
+echo "ID=steamos" > ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
+echo "VERSION_ID=${VERSION_ID}" >> ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
+
+mksquashfs ${SYSEXT_PREFIX} ${SYSEXT_PREFIX}.raw
