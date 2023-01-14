@@ -34,8 +34,10 @@ done
 And here is a concept of another potential '[literate](https://en.wikipedia.org/wiki/Literate_programming)' format.
 Although this whole script is kind of the opposite.
 
-    : << DOC
-    This is a multi-line string that doesn't need to be prefixed by '#'.
-    Unfortunately backticks would be interpreted, which could be dangerous.
-    We'd also need some state in the conversion script above.
-    DOC
+```shell
+: << DOC
+This is a multi-line string that doesn't need to be prefixed by '#'.
+Unfortunately backticks would be interpreted, which could be dangerous.
+We'd also need some state in the conversion script above.
+DOC
+```
