@@ -13,10 +13,12 @@ This little script:
 3.  Renames the `.md.sh` files back to `.sh`
 4.  Moves the `.md` files in `scripts/` to `docs/`
 
+```shell
     rename .sh .md scripts/*.sh
     sed -E -i.sh '/^#!/d; s/^([^#])/    \1/; s/^# //' scripts/*
     rename .md.sh .sh scripts/*.sh
     mv scripts/*.md docs/
+```
 
 Old (and simpler) version:
 

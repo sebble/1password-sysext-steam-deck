@@ -2,6 +2,8 @@
 title: Download
 ---
 
+Try `make download` or `make`.
+
 ## Download 1Password desktop
 
 Start by downloading the offical 1Password release archive. We will install this into our sysext.

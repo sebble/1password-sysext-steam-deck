@@ -2,6 +2,8 @@
 title: Install 
 ---
 
+Try `make install`.
+
 ## Configure 1Password desktop
 
 TODO
