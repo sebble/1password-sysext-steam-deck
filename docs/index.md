@@ -1,3 +1,7 @@
+---
+title: About
+---
+
 ## systemd system extension (`systemd-sysext`) for Steam Deck
 
 This repository contains instructions to build a system extension for use on a Steam Deck.

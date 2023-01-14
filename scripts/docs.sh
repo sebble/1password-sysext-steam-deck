@@ -6,6 +6,7 @@ rename .sh .md scripts/*.sh
 sed -E -i.sh '/^#!/d; s/^([^#])/    \1/; s/^# //' scripts/*
 rename .md.sh .sh scripts/*.sh
 mv scripts/*.md docs/
+rm docs/docs.md
 
 # Old version:
 
