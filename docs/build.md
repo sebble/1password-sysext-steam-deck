@@ -1,3 +1,6 @@
+---
+title: Build
+---
 
 We provide a name for the `sysext` that we are going to build.
 
