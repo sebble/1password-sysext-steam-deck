@@ -1,5 +1,5 @@
 ---
-title: Download sources
+title: Download
 ---
 
 ## Download 1Password desktop

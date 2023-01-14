@@ -4,14 +4,12 @@ title: About
 
 ## systemd system extension (`systemd-sysext`) for Steam Deck
 
+> **Notice:** This is a work in progress.
+
 This repository contains instructions to build a system extension for use on a Steam Deck.
 A systemd system extension allows you to install software without modifying the read-only file system on `/usr`.
 
-### Status
-
-> **Notice:** This is a work in progress.
-
-**Working**
+**Features**
 
 -   Desktop GUI application appears, but without an icon
 -   System tray with _Quick Access_ popup
