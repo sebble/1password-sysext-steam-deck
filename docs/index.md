@@ -4,23 +4,19 @@ title: About
 
 ## systemd system extension (`systemd-sysext`) for Steam Deck
 
-> **Notice:** This is a work in progress.
+> **Notice:** This is a work in progress. See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues). Specifically https://github.com/sebble/1password-sysext-steam-deck/issues/10 (CLI no longer working after a system restart)
 
 This repository contains instructions to build a system extension for use on a Steam Deck.
 A systemd system extension allows you to install software without modifying the read-only file system on `/usr`.
 
 **Features**
 
--   Desktop GUI application appears, but without an icon
+-   Desktop GUI application appears ~~but without an icon~~
 -   System tray with _Quick Access_ popup
 -   1Password links from Firefox open in desktop GUI, including registering accounts
 -   **SSH Agent can be used from Terminal, including commit signing**
 -   **System authentication prompt**
--   **1Password CLI works now!**
-
-**Not working**
-
--   See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues)
+-   **1Password CLI worked, once..** https://github.com/sebble/1password-sysext-steam-deck/issues/10
 
 ### Instructions
 
