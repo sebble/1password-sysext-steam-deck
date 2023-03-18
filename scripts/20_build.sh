@@ -12,12 +12,13 @@ set -ex
 
 # ```shell
 SYSEXT_PREFIX=1password
+SYSTEXT_PATH="build/extensions/${SYSEXT_PREFIX}"
 # ```
 
 # Before we do anything else we also need to ensure everything in opt is owned by `root` (for the later `setuid` bits to work).
 
 # ```shell
-sudo chown -R root:root ${SYSEXT_PREFIX}
+sudo chown -R root:root ${SYSTEXT_PATH}
 # ```
 
 # The following is almost identical to `/opt/1Password/after-install.sh` in official desktop download archive.
@@ -29,9 +30,11 @@ sudo chown -R root:root ${SYSEXT_PREFIX}
 # Lastly, let's create a few directories ahead of time.
 
 # ```shell
-sudo mkdir -p ${SYSEXT_PREFIX}/usr/share/bin/
-sudo mkdir -p ${SYSEXT_PREFIX}/usr/share/polkit-1/actions/
-sudo mkdir -p ${SYSEXT_PREFIX}/usr/share/doc/1password/examples/
+sudo mkdir -p ${SYSTEXT_PATH}/usr/share/bin/
+sudo mkdir -p ${SYSTEXT_PATH}/usr/share/polkit-1/actions/
+sudo mkdir -p ${SYSTEXT_PATH}/usr/share/doc/1password/examples/
+sudo mkdir -p ${SYSTEXT_PATH}/usr/share/applications/
+sudo mkdir -p ${SYSTEXT_PATH}/usr/lib/extension-release.d/
 # ```
 
 # The mostly original install script:
@@ -39,7 +42,7 @@ sudo mkdir -p ${SYSEXT_PREFIX}/usr/share/doc/1password/examples/
 # ```shell
 installFiles() {
   CWD=$(pwd)
-  cd ${SYSEXT_PREFIX}/opt/1Password/
+  cd ${SYSTEXT_PATH}/opt/1Password/
 
   # Fill in policy kit file with a list of (the first 10) human users of the system.
   export POLICY_OWNERS
@@ -79,7 +82,7 @@ installFiles() {
   cd "$CWD"
 
   # Register path symlink
-  sudo ln -sf ../../opt/1Password/1password ${SYSEXT_PREFIX}/usr/bin/1password
+  sudo ln -sf ../../opt/1Password/1password ${SYSTEXT_PATH}/usr/bin/1password
 }
 
 installFiles
@@ -89,7 +92,7 @@ installFiles
 ## Add application (enables browser integration and launcher menu item)
 
 # ```shell
-sudo cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREFIX}/usr/share/applications/
+sudo cp ${SYSTEXT_PATH}/opt/1Password/resources/1password.desktop ${SYSTEXT_PATH}/usr/share/applications/
 # ```
 
 ## Configure 1Password CLI
@@ -97,8 +100,8 @@ sudo cp ${SYSEXT_PREFIX}/opt/1Password/resources/1password.desktop ${SYSEXT_PREF
 # For the CLI to work we must ensure that it is in the correct group. This enables the `setgid` bit to do some magic.
 
 # ```shell
-sudo chgrp onepassword-cli ${SYSEXT_PREFIX}/usr/bin/op
-sudo chmod g+s ${SYSEXT_PREFIX}/usr/bin/op
+sudo chgrp onepassword-cli ${SYSTEXT_PATH}/usr/bin/op
+sudo chmod g+s ${SYSTEXT_PATH}/usr/bin/op
 # ```
 
 #     gpg --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
@@ -108,15 +111,15 @@ sudo chmod g+s ${SYSEXT_PREFIX}/usr/bin/op
 
 # ```shell
 VERSION_ID="$(grep -E '^VERSION_ID=' /etc/os-release | cut -d= -f2)"
-echo "ID=steamos" | sudo tee ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
-echo "VERSION_ID=${VERSION_ID}" | sudo tee -a ${SYSEXT_PREFIX}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
+echo "ID=steamos" | sudo tee ${SYSTEXT_PATH}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
+echo "VERSION_ID=${VERSION_ID}" | sudo tee -a ${SYSTEXT_PATH}/usr/lib/extension-release.d/extension-release.${SYSEXT_PREFIX}
 # ```
 
 ## Create the filesystem layer
 
 # ```shell
-rm -f ${SYSEXT_PREFIX}.raw
-mksquashfs ${SYSEXT_PREFIX} ${SYSEXT_PREFIX}.raw
+rm -f ${SYSTEXT_PATH}.raw
+mksquashfs ${SYSTEXT_PATH} ${SYSTEXT_PATH}.raw
 # ```
 
 # Next: [Install](install)

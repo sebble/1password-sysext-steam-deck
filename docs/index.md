@@ -4,16 +4,23 @@ title: About
 
 ## systemd system extension (`systemd-sysext`) for Steam Deck
 
-> **Notice:** This is a work in progress. See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues). Specifically https://github.com/sebble/1password-sysext-steam-deck/issues/10 (CLI no longer working after a system restart)
+> **Notice:** This is a work in progress. See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues). Specifically https://github.com/sebble/1password-sysext-steam-deck/issues/10 (CLI no longer working after a system restart) and https://github.com/sebble/1password-sysext-steam-deck/issues/11 (Fifefox integration not great any more)
 
 This repository contains instructions to build a system extension for use on a Steam Deck.
 A systemd system extension allows you to install software without modifying the read-only file system on `/usr`.
+
+Last tested with:
+
+- SteamOS Holo 3.4.4 (20221228.1)
+- 1Password for Linux 8.10.3 (81003012)
+- Mozilla Firefox Flatpak 110.0.1
+- 1Password CLI 2.15.0 (build #2150001) – released 2023-03-14
 
 **Features**
 
 -   Desktop GUI application appears ~~but without an icon~~
 -   System tray with _Quick Access_ popup
--   1Password links from Firefox open in desktop GUI, including registering accounts
+-   ~~1Password links from Firefox open in desktop GUI, including registering accounts~~ https://github.com/sebble/1password-sysext-steam-deck/issues/11
 -   **SSH Agent can be used from Terminal, including commit signing**
 -   **System authentication prompt**
 -   **1Password CLI worked, once..** https://github.com/sebble/1password-sysext-steam-deck/issues/10
@@ -22,12 +29,17 @@ A systemd system extension allows you to install software without modifying the 
 
 **Quick start**
 
+You must run this from a normal SteamOS Terminal within this repo, not within, e.g., VS Code Flatpak.
+
 ```shell
-make
-make install
+./scripts/10_download.sh
+./scripts/20_build.sh
+./scripts/30_install.sh
 ```
 
 Or read through the source-code which has been written with in-line documentation. [On GitHub (source)](https://github.com/sebble/1password-sysext-steam-deck). [On GitHub Pages (rendered)](https://sebble.github.io/1password-sysext-steam-deck/download)
+
+> TODO: Work out how to either use make on the Terminal, or set root file ownership within Flatpaks.
 
 **Setting up SSH Agent**
 
@@ -94,7 +106,7 @@ Secondly, see <https://blogs.igalia.com/berto/2022/09/13/adding-software-to-the-
 
 **Could this be achieved with more permissive Flatpak policies?**
 
-I don't know. I assume not, but when reading abotu Visual Studio Code Flatpak issues perhaps there are other approaches..? Please share if you have ideas. P.S. I do not know Flatpak either so I would not be able to implement this.
+I don't know. I assume not, but when reading about Visual Studio Code Flatpak issues perhaps there are other approaches..? Please share if you have ideas. P.S. I do not know Flatpak either so I would not be able to implement this.
 
 **My `os-release` is `22.08`**
 
@@ -105,6 +117,10 @@ Use a system Terminal session.
 **Where is the documentation?**
 
 I have added comments inline with the main scripts, these are converted to markdown (as long as I remembered to type `make docs` before committing). See <https://sebble.github.io/1password-sysext-steam-deck/>.
+
+**I cannot use Make**
+
+See "_My `os-release` is `22.08`_", but this time `make` is not installed on SteamOS in general, only _inside_ the VS Code Flatpak. Ignore the Makefile, use the `scripts/*.sh` directly. There's nothing special in the `Makefile` and install won't work, some file ownership also won't work.
 
 ### To-do
 
