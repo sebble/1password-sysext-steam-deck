@@ -100,7 +100,7 @@ sudo cp ${SYSTEXT_PATH}/opt/1Password/resources/1password.desktop ${SYSTEXT_PATH
 # For the CLI to work we must ensure that it is in the correct group. This enables the `setgid` bit to do some magic.
 
 # ```shell
-sudo chgrp onepassword-cli ${SYSTEXT_PATH}/usr/bin/op
+sudo chgrp ${GROUP_NAME} ${SYSTEXT_PATH}/usr/bin/op
 sudo chmod g+s ${SYSTEXT_PATH}/usr/bin/op
 # ```
 
