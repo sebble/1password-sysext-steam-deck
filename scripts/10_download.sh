@@ -45,9 +45,9 @@ URL="$(curl -s 'https://app-updates.agilebits.com/product_history/CLI2' | grep -
 # ```
 
 # ```shell
-ARCH="amd64" # choose between 386/amd64/arm/arm64
-VERSION="2.15.0"
-URL="https://cache.agilebits.com/dist/1P/op/pkg/v${VERSION}/op_linux_${ARCH}_v${VERSION}.zip"
+#ARCH="amd64" # choose between 386/amd64/arm/arm64
+#VERSION="2.15.0"
+#URL="https://cache.agilebits.com/dist/1P/op/pkg/v${VERSION}/op_linux_${ARCH}_v${VERSION}.zip"
 wget "${URL}" -O tmp/op.zip
 mkdir -p "${SYSTEXT_PATH}/usr/bin"
 unzip -d "${SYSTEXT_PATH}/usr/bin" tmp/op.zip -x op.sig
