@@ -11,10 +11,10 @@ A systemd system extension allows you to install software without modifying the 
 
 Last tested with:
 
-- SteamOS Holo 3.4.4 (20221228.1)
+- SteamOS Holo 3.4.6 (20230313.1)
 - 1Password for Linux 8.10.3 (81003012)
-- Mozilla Firefox Flatpak 110.0.1
-- 1Password CLI 2.15.0 (build #2150001) – released 2023-03-14
+- Mozilla Firefox Flatpak 111.0
+- 1Password CLI 2.16.1
 
 **Features**
 
