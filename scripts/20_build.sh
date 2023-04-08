@@ -8,6 +8,17 @@ set -ex
 
 # Try `make build` or `make`.
 
+# Ensure we have the files we'll need
+
+# ```shell
+for f in op.zip 1password-latest.tar.gz 1password-latest.deb; do
+  if test ! -f "tmp/$f"; then
+    echo "Missing source package '${f}', please download first."
+    exit 1
+  fi
+done
+# ```
+
 # We provide a name for the `sysext` that we are going to build.
 
 # ```shell
@@ -18,7 +29,8 @@ SYSTEXT_PATH="build/extensions/${SYSEXT_PREFIX}"
 # Before we do anything else we also need to ensure everything in opt is owned by `root` (for the later `setuid` bits to work).
 
 # ```shell
-sudo chown -R root:root ${SYSTEXT_PATH}
+sudo mkdir -p "${SYSTEXT_PATH}"
+sudo chown -R root:root "${SYSTEXT_PATH}"
 # ```
 
 # The following is almost identical to `/opt/1Password/after-install.sh` in official desktop download archive.
@@ -30,11 +42,25 @@ sudo chown -R root:root ${SYSTEXT_PATH}
 # Lastly, let's create a few directories ahead of time.
 
 # ```shell
-sudo mkdir -p ${SYSTEXT_PATH}/usr/share/bin/
-sudo mkdir -p ${SYSTEXT_PATH}/usr/share/polkit-1/actions/
-sudo mkdir -p ${SYSTEXT_PATH}/usr/share/doc/1password/examples/
-sudo mkdir -p ${SYSTEXT_PATH}/usr/share/applications/
-sudo mkdir -p ${SYSTEXT_PATH}/usr/lib/extension-release.d/
+sudo mkdir -p "${SYSTEXT_PATH}/opt"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/bin"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/share/bin/"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/share/polkit-1/actions/"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/share/doc/1password/examples/"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/share/applications/"
+sudo mkdir -p "${SYSTEXT_PATH}/usr/lib/extension-release.d/"
+# ```
+
+# Next we will copy the contents into a the location they would normally be extracted to, but inside our `sysext` file system.
+
+# ```shell
+tar -C tmp -xf tmp/1password-latest.tar.gz # AUR
+sudo mv tmp/1password-*.x64 "${SYSTEXT_PATH}/opt/1Password" # AUR
+sudo unzip -d "${SYSTEXT_PATH}/usr/bin" tmp/op.zip -x op.sig # CLI
+mkdir -p tmp/deb-data # DEB
+tar -C tmp/deb-data -xf tmp/data.tar.xz # DEB
+sudo cp -r tmp/deb-data/usr "${SYSTEXT_PATH}/" # DEB
+sudo chown -R root:root "${SYSTEXT_PATH}"
 # ```
 
 # The mostly original install script:
@@ -97,10 +123,14 @@ sudo cp ${SYSTEXT_PATH}/opt/1Password/resources/1password.desktop ${SYSTEXT_PATH
 
 ## Configure 1Password CLI
 
-# For the CLI to work we must ensure that it is in the correct group. This enables the `setgid` bit to do some magic.
+# For the CLI to work we must ensure that it is in the correct group.
+# This enables the `setgid` bit to do some magic.
+# See a related issue <https://github.com/sebble/1password-sysext-steam-deck/issues/15>.
+# See post-install script in `tmp/1password-cli/1password-cli.install`.
 
 # ```shell
-sudo chgrp ${GROUP_NAME} ${SYSTEXT_PATH}/usr/bin/op
+getent group onepassword-cli || sudo groupadd onepassword-cli
+sudo chgrp onepassword-cli ${SYSTEXT_PATH}/usr/bin/op
 sudo chmod g+s ${SYSTEXT_PATH}/usr/bin/op
 # ```
 

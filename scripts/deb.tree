@@ -1,0 +1,138 @@
+tmp/deb-data/
+|-- opt
+|   `-- 1Password
+|       |-- 1password
+|       |-- 1Password-BrowserSupport
+|       |-- 1Password-HIDHelper
+|       |-- 1Password-KeyringHelper
+|       |-- 1Password-LastPass-Exporter
+|       |-- after-install.sh
+|       |-- after-remove.sh
+|       |-- chrome_100_percent.pak
+|       |-- chrome_200_percent.pak
+|       |-- chrome_crashpad_handler
+|       |-- chrome-sandbox
+|       |-- com.1password.1Password.policy.tpl
+|       |-- icudtl.dat
+|       |-- install_biometrics_policy.sh
+|       |-- libEGL.so
+|       |-- libffmpeg.so
+|       |-- libGLESv2.so
+|       |-- libvk_swiftshader.so
+|       |-- libvulkan.so.1
+|       |-- LICENSE.electron.txt
+|       |-- LICENSES.chromium.html
+|       |-- locales
+|       |   |-- af.pak
+|       |   |-- am.pak
+|       |   |-- ar.pak
+|       |   |-- bg.pak
+|       |   |-- bn.pak
+|       |   |-- ca.pak
+|       |   |-- cs.pak
+|       |   |-- da.pak
+|       |   |-- de.pak
+|       |   |-- el.pak
+|       |   |-- en-GB.pak
+|       |   |-- en-US.pak
+|       |   |-- es-419.pak
+|       |   |-- es.pak
+|       |   |-- et.pak
+|       |   |-- fa.pak
+|       |   |-- fil.pak
+|       |   |-- fi.pak
+|       |   |-- fr.pak
+|       |   |-- gu.pak
+|       |   |-- he.pak
+|       |   |-- hi.pak
+|       |   |-- hr.pak
+|       |   |-- hu.pak
+|       |   |-- id.pak
+|       |   |-- it.pak
+|       |   |-- ja.pak
+|       |   |-- kn.pak
+|       |   |-- ko.pak
+|       |   |-- lt.pak
+|       |   |-- lv.pak
+|       |   |-- ml.pak
+|       |   |-- mr.pak
+|       |   |-- ms.pak
+|       |   |-- nb.pak
+|       |   |-- nl.pak
+|       |   |-- pl.pak
+|       |   |-- pt-BR.pak
+|       |   |-- pt-PT.pak
+|       |   |-- ro.pak
+|       |   |-- ru.pak
+|       |   |-- sk.pak
+|       |   |-- sl.pak
+|       |   |-- sr.pak
+|       |   |-- sv.pak
+|       |   |-- sw.pak
+|       |   |-- ta.pak
+|       |   |-- te.pak
+|       |   |-- th.pak
+|       |   |-- tr.pak
+|       |   |-- uk.pak
+|       |   |-- ur.pak
+|       |   |-- vi.pak
+|       |   |-- zh-CN.pak
+|       |   `-- zh-TW.pak
+|       |-- op-ssh-sign
+|       |-- resources
+|       |   |-- 1password.desktop
+|       |   |-- app.asar
+|       |   |-- app.asar.unpacked
+|       |   |   |-- CREDITS.html
+|       |   |   `-- index.node
+|       |   |-- custom_allowed_browsers
+|       |   `-- icons
+|       |       `-- hicolor
+|       |           |-- 256x256
+|       |           |   `-- apps
+|       |           |       `-- 1password.png
+|       |           |-- 32x32
+|       |           |   `-- apps
+|       |           |       `-- 1password.png
+|       |           |-- 512x512
+|       |           |   `-- apps
+|       |           |       `-- 1password.png
+|       |           `-- 64x64
+|       |               `-- apps
+|       |                   `-- 1password.png
+|       |-- resources.pak
+|       |-- snapshot_blob.bin
+|       |-- v8_context_snapshot.bin
+|       `-- vk_swiftshader_icd.json
+`-- usr
+    `-- share
+        |-- applications
+        |   `-- 1password.desktop
+        |-- doc
+        |   `-- 1password
+        |       `-- changelog.gz
+        `-- icons
+            `-- hicolor
+                |-- 128x128
+                |   `-- apps
+                |       `-- 1password.png
+                |-- 16x16
+                |   `-- apps
+                |       `-- 1password.png
+                |-- 256x256
+                |   `-- apps
+                |       `-- 1password.png
+                |-- 32x32
+                |   `-- apps
+                |       `-- 1password.png
+                |-- 48x48
+                |   `-- apps
+                |       `-- 1password.png
+                |-- 512x512
+                |   `-- apps
+                |       `-- 1password.png
+                `-- 64x64
+                    `-- apps
+                        `-- 1password.png
+
+36 directories, 99 files

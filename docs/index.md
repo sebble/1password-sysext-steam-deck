@@ -4,7 +4,7 @@ title: About
 
 ## systemd system extension (`systemd-sysext`) for Steam Deck
 
-> **Notice:** This is a work in progress. See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues). Specifically https://github.com/sebble/1password-sysext-steam-deck/issues/10 (CLI no longer working after a system restart) and https://github.com/sebble/1password-sysext-steam-deck/issues/11 (Fifefox integration not great any more)
+> **Notice:** This is a work in progress. See [open issues](https://github.com/sebble/1password-sysext-steam-deck/issues). Specifically https://github.com/sebble/1password-sysext-steam-deck/issues/10 (CLI no longer working after a system restart) and https://github.com/sebble/1password-sysext-steam-deck/issues/11 (Firefox integration not great any more)
 
 This repository contains instructions to build a system extension for use on a Steam Deck.
 A systemd system extension allows you to install software without modifying the read-only file system on `/usr`.
@@ -121,6 +121,10 @@ I have added comments inline with the main scripts, these are converted to markd
 **I cannot use Make**
 
 See "_My `os-release` is `22.08`_", but this time `make` is not installed on SteamOS in general, only _inside_ the VS Code Flatpak. Ignore the Makefile, use the `scripts/*.sh` directly. There's nothing special in the `Makefile` and install won't work, some file ownership also won't work.
+
+**Why do the scripts look funny?**
+
+If you mean the `# '''shell` lines, that's because every script is also valid markdown if you remove all `^# `. See "Where is the documentation?".
 
 ### To-do
 
