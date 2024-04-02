@@ -1,0 +1,16 @@
+{
+  "versions": {
+    "steam_os": {
+      "version_id": "3.5.17",
+      "build_id": "20240228.2"
+    },
+    "1password": {
+      "cli": "2.26.1",
+      "desktop": "8.10.28",
+      "desktop_build": "81028034"
+    },
+    "firefox": {
+      "flatpak": "117.0"
+    }
+  }
+}

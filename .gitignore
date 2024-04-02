@@ -3,4 +3,5 @@
 *.zip
 *.raw
 *.tar.gz
-tmp
+tmp/
+build/

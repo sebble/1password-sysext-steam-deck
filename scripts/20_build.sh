@@ -63,7 +63,7 @@ sudo cp -r tmp/deb-data/usr "${SYSTEXT_PATH}/" # DEB
 sudo chown -R root:root "${SYSTEXT_PATH}"
 # ```
 
-# The mostly original install script:
+# The mostly original install script (compare to ./tmp/postinst):
 
 # ```shell
 installFiles() {
@@ -89,16 +89,17 @@ installFiles() {
 
   # Setup the Core App Integration helper binary with the correct permissions and group
   if [ ! "$(getent group "${GROUP_NAME}")" ]; then
-    groupadd "${GROUP_NAME}"
+    sudo groupadd "${GROUP_NAME}"
   fi
 
-  HELPER_PATH="./1Password-KeyringHelper"
+  # SJIM: removed temporarily because missing from latest postinst
+  #HELPER_PATH="./1Password-KeyringHelper"
   BROWSER_SUPPORT_PATH="./1Password-BrowserSupport"
 
-  sudo chgrp "${GROUP_NAME}" $HELPER_PATH
-  # The binary requires setuid so it may interact with the Kernel keyring facilities
-  sudo chmod u+s $HELPER_PATH
-  sudo chmod g+s $HELPER_PATH
+  #sudo chgrp "${GROUP_NAME}" $HELPER_PATH
+  ## The binary requires setuid so it may interact with the Kernel keyring facilities
+  #sudo chmod u+s $HELPER_PATH
+  #sudo chmod g+s $HELPER_PATH
 
   # This gives no extra permissions to the binary. It only hardens it against environmental tampering.
   sudo chgrp "${GROUP_NAME}" $BROWSER_SUPPORT_PATH
@@ -149,7 +150,7 @@ echo "VERSION_ID=${VERSION_ID}" | sudo tee -a ${SYSTEXT_PATH}/usr/lib/extension-
 
 # ```shell
 rm -f ${SYSTEXT_PATH}.raw
-mksquashfs ${SYSTEXT_PATH} ${SYSTEXT_PATH}.raw
+sudo mksquashfs ${SYSTEXT_PATH} ${SYSTEXT_PATH}.raw
 # ```
 
 # Next: [Install](install)

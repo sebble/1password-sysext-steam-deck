@@ -51,10 +51,10 @@ git clone https://aur.archlinux.org/1password-cli.git tmp/1password-cli
 
 # ```shell
 curl https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb -o tmp/1password-latest.deb
-#(cd tmp && ar x 1password-latest.deb)
-#tar -C tmp -xf tmp/control.tar.gz ./postinst
-#tar -C tmp/deb-data -xf tmp/data.tar.xz
-#tree tmp/1password-8.10.3.x64/ > scripts/aur.tree
+(cd tmp && ar x 1password-latest.deb)
+tar -C tmp -xf tmp/control.tar.gz ./postinst
+mkdir -p tmp/deb-data && tar -C tmp/deb-data -xf tmp/data.tar.xz
+#tree tmp/1password-8.10.28.x64/ > scripts/aur.tree
 #tree tmp/deb-data/ > scripts/deb.tree
 # ````
 

@@ -37,7 +37,7 @@ getent group onepassword-cli || sudo groupadd onepassword-cli
 mkdir -p ~/extensions
 test -L /var/lib/extensions || \
     sudo ln -sf "${HOME}/extensions" /var/lib/extensions
-mv build/extensions/1password.raw ~/extensions/1password.raw
+sudo mv build/extensions/1password.raw ~/extensions/1password.raw
 sudo systemctl enable systemd-sysext
 sudo systemctl start systemd-sysext
 sudo systemd-sysext refresh
