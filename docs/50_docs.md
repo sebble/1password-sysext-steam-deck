@@ -41,3 +41,10 @@ Unfortunately backticks would be interpreted, which could be dangerous.
 We'd also need some state in the conversion script above.
 DOC
 ```
+
+### And update the versions..
+VERSION_ID="$(grep -E '^VERSION_ID=' /etc/os-release | cut -d= -f2)"
+jq ".versions.steam_os.version_id = \"${VERSION_ID}\"" ./scripts/versions.json | tee ./scripts/versions.json
+
+BUILD_ID="$(grep -E '^BUILD_ID=' /etc/os-release | cut -d= -f2)"
+jq ".versions.steam_os.build_id = \"${BUILD_ID}\"" ./scripts/versions.json | tee ./scripts/versions.json
