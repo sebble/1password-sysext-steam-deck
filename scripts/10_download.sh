@@ -30,7 +30,7 @@ curl https://downloads.1password.com/linux/tar/stable/x86_64/1password-latest.ta
 
 ## Download 1Password CLI
 
-# Detect latest download URL for 1Password CLI 
+# Detect latest download URL for 1Password CLI
 
 # ```shell
 URL="$(curl -s 'https://app-updates.agilebits.com/product_history/CLI2' | grep -oE 'https://[^"]+linux_amd64[^"]+\.zip' | grep -v beta | head -1)"

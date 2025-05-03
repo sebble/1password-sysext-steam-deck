@@ -24,7 +24,7 @@ mv scripts/*.md docs/
 # ```
 
 # Old (and simpler) version:
-# 
+#
 # ```shell
 # cd scripts
 # for script in *.sh; do

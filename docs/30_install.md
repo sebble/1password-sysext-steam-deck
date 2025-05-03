@@ -1,5 +1,5 @@
 ---
-title: Install 
+title: Install
 ---
 <!-- hide the `ex` bits, they're only useful in this script
 set -ex
