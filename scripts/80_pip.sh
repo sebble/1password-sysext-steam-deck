@@ -11,8 +11,8 @@ set -ex
 # This seems a bit dodgy but I'm experimenting.
 
 # ```shell
-python -m venv ~/.local # this was an accident but it kind of worked..
-source ~/.local/bin/activate
+python -m venv /home/deck/.local # this was an accident but it kind of worked..
+. /home/deck/.local/bin/activate
 pip install -U pip
 pip install pipx
 deactivate

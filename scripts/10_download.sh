@@ -8,15 +8,6 @@ set -ex
 
 # Try `make download` or `make`.
 
-## Prepare sysext location
-
-# We provide a name for the `sysext` that we are going to build.
-
-# ```shell
-SYSEXT_PREFIX=1password
-SYSTEXT_PATH="build/extensions/${SYSEXT_PREFIX}"
-# ```
-
 ## Download 1Password desktop
 
 # Start by downloading the offical 1Password release archive. We will install this into our sysext.
