@@ -1,6 +1,6 @@
 .PHONY: all download build install docs clean
 
-all: download build
+all: clean download build
 
 download:
 	./scripts/10_download.sh
