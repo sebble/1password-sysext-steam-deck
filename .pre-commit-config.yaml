@@ -3,10 +3,16 @@ repos:
     rev: v5.0.0
     hooks:
     -   id: check-yaml
+    -   id: check-json
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
+    -   id: mixed-line-ending
     -   id: check-added-large-files
+    -   id: check-merge-conflict
+    -   id: forbid-submodules
     -   id: check-case-conflict
+    # -   id: check-executables-have-shebangs
+    -   id: check-shebang-scripts-are-executable
 -   repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
     hooks:
