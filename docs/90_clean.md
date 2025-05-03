@@ -1,2 +1,2 @@
 
-rm -rf tmp build
+sudo rm -rf ./tmp ./build
