@@ -5,7 +5,9 @@
       "build_id": "20250313.1"
     },
     "1password": {
-      "cli": "2.30.3"
+      "cli": "2.30.3",
+      "desktop": "8.10.75",
+      "desktop_build": "TODO"
     },
     "firefox": {
       "flatpak": "138.0.1"

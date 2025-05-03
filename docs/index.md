@@ -11,10 +11,10 @@ A systemd system extension allows you to install software without modifying the 
 
 Last tested with:
 
-- SteamOS Holo 3.4.6 (20230313.1)
-- 1Password for Linux 8.10.3 (81003012)
-- Mozilla Firefox Flatpak 111.0
-- 1Password CLI 2.16.1
+- SteamOS Holo 3.6.24 (20250313.1)
+- 1Password for Linux 8.10.75 (81075001)
+- Mozilla Firefox Flatpak 138.0.1
+- 1Password CLI 2.30.3
 
 **Features**
 
@@ -24,6 +24,7 @@ Last tested with:
 -   **SSH Agent can be used from Terminal, including commit signing**
 -   **System authentication prompt**
 -   **1Password CLI works**
+-   **1Password SSH Agent works inside VSCode Flatpak**
 
 **Note:** Ensure a full system restart after any updates, this resolves most errors with op CLI in my limited experience.
 
@@ -130,16 +131,7 @@ If you mean the `# '''shell` lines, that's because every script is also valid ma
 
 ### To-do
 
--   Verify signatures of downloaded files
--   Install icons
--   Install CLI shell completion
--   Fix integration between CLI and desktop
--   Document SSH Agent usage better
--   Make CLI optional
--   Verify more functionality
--   Better dev notes
--   Make a blog post?
--   Work out commit signing
+-   See https://github.com/sebble/1password-sysext-steam-deck/issues
 
 ### References
 
